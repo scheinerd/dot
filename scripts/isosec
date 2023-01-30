@@ -1,0 +1,13 @@
+#!/bin/bash
+
+isosec=$(date -Iseconds)
+
+# cut off last 6 characters
+
+isosec=${isosec:0: -6}
+
+# replace all :,- and Ts with an empty string
+
+isosec=${isosec//[:,\-,T]/}
+
+echo "$isosec"
